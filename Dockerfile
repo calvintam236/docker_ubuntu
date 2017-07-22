@@ -12,8 +12,7 @@ RUN dpkg --add-architecture i386 \
     && curl -L -O --referer https://support.amd.com https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-17.10-450821.tar.xz \
     && tar -Jxvf amdgpu-pro-17.10-450821.tar.xz \
     && rm amdgpu-pro-17.10-450821.tar.xz \
-    && cd amdgpu-pro-17.10-450821/ \
-    && ./amdgpu-pro-install -y \
+    && ./amdgpu-pro-17.10-450821/amdgpu-pro-install -y \
     && rm -r amdgpu-pro-17.10-450821/ \
     && apt-get -y remove ca-certificates curl xz-utils \
     && apt-get -y autoremove \
