@@ -9,11 +9,11 @@ RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get -y dist-upgrade \
     && apt-get -y --no-install-recommends install ca-certificates curl xz-utils \
-    && curl -L -O --referer https://support.amd.com https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-17.10-450821.tar.xz \
-    && tar -Jxvf amdgpu-pro-17.10-450821.tar.xz \
-    && rm amdgpu-pro-17.10-450821.tar.xz \
-    && ./amdgpu-pro-17.10-450821/amdgpu-pro-install -y \
-    && rm -r amdgpu-pro-17.10-450821/ \
+    && curl -L -O --referer https://support.amd.com https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-17.30-458935.tar.xz \
+    && tar -Jxvf amdgpu-pro-17.30-458935.tar.xz \
+    && rm amdgpu-pro-17.30-458935.tar.xz \
+    && ./amdgpu-pro-17.30-458935/amdgpu-pro-install -y \
+    && rm -r amdgpu-pro-17.30-458935/ \
     && apt-get -y remove ca-certificates curl xz-utils \
     && apt-get -y autoremove \
     && apt-get clean autoclean \
