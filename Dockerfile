@@ -8,16 +8,16 @@ WORKDIR /tmp
 RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get -y dist-upgrade \
-    && apt-get -y --no-install-recommends install ca-certificates curl xz-utils \
-    && curl -L -O --referer https://support.amd.com https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-17.30-465504.tar.xz \
-    && tar -Jxvf amdgpu-pro-17.30-465504.tar.xz \
-    && rm amdgpu-pro-17.30-465504.tar.xz \
-    && ./amdgpu-pro-17.30-465504/amdgpu-pro-install -y \
-    && rm -r amdgpu-pro-17.30-465504 \
-    && apt-get -y remove ca-certificates curl xz-utils \
+    && apt-get -y --no-install-recommends install ca-certificates curl \
+    && curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub | apt-key add - \
+    && curl -L -O https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb \
+    && dpkg -i cuda-repo-ubuntu1604_8.0.61-1_amd64.deb \
+    && rm cuda-repo-ubuntu1604_8.0.61-1_amd64.deb \
+    && apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install cuda \
+    && apt-get -y remove ca-certificates curl \
     && apt-get -y autoremove \
     && apt-get clean autoclean \
-    && rm -rf /var/lib/{apt,dpkg,cache,log} \
-    && usermod -a -G video root
+    && rm -rf /var/lib/{apt,dpkg,cache,log}
 
 CMD ["/bin/bash"]
