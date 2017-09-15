@@ -16,7 +16,6 @@ RUN dpkg --add-architecture i386 \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install cuda \
     && apt-get -y remove ca-certificates curl \
-    && apt-get -y autoremove \
     && apt-get clean autoclean \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
