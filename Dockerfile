@@ -12,10 +12,8 @@ RUN apt-get update \
     && apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install cuda \
-    && apt-mark manual cuda \
     && export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}} \
     && apt-get -y remove ca-certificates curl \
-    && apt-get -y autoremove \
     && apt-get clean autoclean \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
