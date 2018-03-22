@@ -9,16 +9,14 @@ RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get -y dist-upgrade \
     && apt-get -y --no-install-recommends install ca-certificates curl xz-utils \
-    && curl -L -O --referer https://support.amd.com https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-17.40-492261.tar.xz \
-    && tar -Jxvf amdgpu-pro-17.40-492261.tar.xz \
-    && rm amdgpu-pro-17.40-492261.tar.xz \
-    && ./amdgpu-pro-17.40-492261/amdgpu-pro-install -y \
-    && apt-get -y install rocm-amdgpu-pro \
-    && rm -r amdgpu-pro-17.40-492261 \
+    && curl -L -O --referer https://support.amd.com https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-17.50-511655.tar.xz \
+    && tar -Jxvf amdgpu-pro-17.50-511655.tar.xz \
+    && rm amdgpu-pro-17.50-511655.tar.xz \
+    && ./amdgpu-pro-17.50-511655/amdgpu-install -y --headless --opencl=legacy,rocm \
+    && rm -r amdgpu-pro-17.50-511655 \
     && apt-get -y remove ca-certificates curl xz-utils \
     && apt-get -y autoremove \
     && apt-get clean autoclean \
-    && rm -rf /var/lib/{apt,dpkg,cache,log} \
-    && echo 'export LLVM_BIN=/opt/amdgpu-pro/bin' | tee /etc/profile.d/amdgpu-pro.sh
+    && rm -rf /var/lib/{apt,dpkg,cache,log}
 
 CMD ["/bin/bash"]
