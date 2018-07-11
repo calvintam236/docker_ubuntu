@@ -8,7 +8,7 @@ This is Ubuntu 16.04 with Radeon Software for Linux or CUDA Toolkit installed. I
 
 Replace `ARCH` for your graphic card architecture. Available option(s): `amd`, `nvidia`
 
-- Use the following line in your `Dockerfile`
+- Use the following line in your `Dockerfile`:
 
 ```console
 FROM calvintam236/ubuntu:ARCH
