@@ -1,10 +1,25 @@
-# What is Ubuntu?
+## Ubuntu
 
-This is Ubuntu 16.04 with NVIDIA CUDA Toolkit 9.0.176 installed. It was created for running CUDA programs within Docker containers.
+### What is it?
 
-# How to use this image [NVIDIA version]
+This is Ubuntu 16.04 with Radeon Software for Linux or CUDA Toolkit installed. It was created for running OpenCL or CUDA programs within Docker containers.
 
-Use the following line in your `Dockerfile`:
+### Example usages
+
+Replace `ARCH` for your graphic card architecture. Available option(s): `amd`, `nvidia`
+
+- Use the following line in your `Dockerfile`
+
+```console
+FROM calvintam236/ubuntu:ARCH
 ```
-FROM calvintam236/ubuntu:nvidia
-```
+
+### Donations
+
+If you like to buy me a cup of coffee for this Dockerfile/ docker image, you can donate to here:
+
+- BTC: `1MTkPFtp3qxE4Y98pTHP3z767RGKmrT92a`
+- ETH: `0x5896a85E8c175c563DC00087535582394d394838`
+- XMR: `4ASikgNhKqmY5EjnaoDws1jjyhQy9ZrcDcCwfYVt5Rtxb6B1FqsehpLY8ZxxZD5B6r8QZKb4y1FKW1eqiS5Lph77Ca9qprU`
+- ETC: `0xFaBA3be3b3De5469C3F6C6185150928F3773C7b4`
+- ZEC: `t1Z5Kc75JQ17txyaDUfwwyabTgsJMfuuSp4`
