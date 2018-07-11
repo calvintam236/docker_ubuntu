@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER calvintam236 <calvintam236@users.noreply.github.com>
+LABEL maintainer="calvintam236"
 LABEL description="Ubuntu with graphic driver installed in Docker."
 
 WORKDIR /tmp
@@ -9,11 +9,11 @@ RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get -y dist-upgrade \
     && apt-get -y --no-install-recommends install ca-certificates curl xz-utils \
-    && curl -L -O --referer https://support.amd.com https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-17.50-511655.tar.xz \
-    && tar -Jxvf amdgpu-pro-17.50-511655.tar.xz \
-    && rm amdgpu-pro-17.50-511655.tar.xz \
-    && ./amdgpu-pro-17.50-511655/amdgpu-install -y --headless --opencl=legacy,rocm \
-    && rm -r amdgpu-pro-17.50-511655 \
+    && curl -L -O --referer https://support.amd.com https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-18.20-606296.tar.xz \
+    && tar -Jxvf amdgpu-pro-18.20-606296.tar.xz \
+    && rm amdgpu-pro-18.20-606296.tar.xz \
+    && ./amdgpu-pro-18.20-606296/amdgpu-install -y --headless --opencl=legacy,rocm \
+    && rm -r amdgpu-pro-18.20-606296 \
     && apt-get -y remove ca-certificates curl xz-utils \
     && apt-get -y autoremove \
     && apt-get clean autoclean \
