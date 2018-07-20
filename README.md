@@ -2,11 +2,11 @@
 
 ### What is it?
 
-This is Ubuntu 16.04 with Radeon Software for Linux or CUDA Toolkit installed. It was created for running OpenCL or CUDA programs within Docker containers.
+This is Ubuntu 16.04 with Radeon Software for Linux, The Mesa 3D Graphics Library or CUDA Toolkit installed. It was created for running OpenCL or CUDA programs within Docker containers.
 
 ### Example usages
 
-Replace `ARCH` for your graphic card architecture. Available option(s): `amd`, `nvidia`
+Replace `ARCH` for your graphic card architecture. Available option(s): `amdgpu`, `mesa`, `cuda`
 
 - Use the following line in your `Dockerfile`:
 
