@@ -3,8 +3,6 @@ FROM ubuntu:16.04
 LABEL maintainer="calvintam236"
 LABEL description="Ubuntu with graphic driver installed in Docker."
 
-WORKDIR /tmp
-
 RUN dpkg --add-architecture i386 \
     && apt-get update \
     && apt-get -y dist-upgrade \
