@@ -6,7 +6,7 @@ This is Ubuntu 16.04 with Radeon Software for Linux, The Mesa 3D Graphics Librar
 
 ### Example usages
 
-Replace `ARCH` for your graphic card architecture. Available option(s): `amdgpu`, `mesa`, `cuda`
+Replace `ARCH` for your graphic card architecture. Available option(s): `amdgpu`, `rocm`, `mesa`, `cuda`
 
 - Use the following line in your `Dockerfile`:
 
