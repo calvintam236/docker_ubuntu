@@ -12,7 +12,7 @@ RUN dpkg --add-architecture i386 \
     && curl -L -O --referer https://support.amd.com https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-18.20-606296.tar.xz \
     && tar -Jxvf amdgpu-pro-18.20-606296.tar.xz \
     && rm amdgpu-pro-18.20-606296.tar.xz \
-    && ./amdgpu-pro-18.20-606296/amdgpu-install -y --headless --opencl=rocm \
+    && ./amdgpu-pro-18.20-606296/amdgpu-install -y --headless --opencl=legacy,pal \
     && rm -r amdgpu-pro-18.20-606296 \
     && apt-get -y remove ca-certificates curl xz-utils \
     && apt-get -y autoremove \
