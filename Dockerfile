@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 LABEL maintainer="calvintam236"
 LABEL description="Ubuntu with graphic driver installed in Docker."
