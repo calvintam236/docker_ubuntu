@@ -15,8 +15,6 @@ RUN dpkg --add-architecture i386 \
     && ./amdgpu-pro-18.50-708488-ubuntu-18.04/amdgpu-install -y --headless --opencl=legacy,pal \
     && rm -r amdgpu-pro-18.50-708488-ubuntu-18.04 \
     && apt-get -y remove ca-certificates curl xz-utils \
-    && apt-get -y autoremove \
-    && apt-get clean autoclean \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
 CMD ["/bin/bash"]
