@@ -2,7 +2,7 @@
 
 ### What is it?
 
-This is Ubuntu 16.04 with Radeon Software for Linux, The Mesa 3D Graphics Library or CUDA Toolkit installed. It was created for running OpenCL or CUDA programs within Docker containers.
+This is Ubuntu 18.04 with Radeon Software for Linux, The Mesa 3D Graphics Library or CUDA Toolkit installed. It was created for running OpenCL or CUDA programs within Docker containers.
 
 ### Example usages
 
