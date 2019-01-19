@@ -7,7 +7,7 @@ WORKDIR /tmp
 
 RUN apt-get update \
     && apt-get -y dist-upgrade \
-    && apt-get -y --no-install-recommends install ca-certificates curl \
+    && apt-get -y --no-install-recommends install ca-certificates curl gnupg2 \
     && curl -L -O https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb \
     && dpkg -i cuda-repo-ubuntu1804_10.0.130-1_amd64.deb \
     && rm cuda-repo-ubuntu1804_10.0.130-1_amd64.deb \
